@@ -1,21 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import './index.css'
-//setup variables 
-const books = [
-{
-  id:1,
-  img:'https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/71UwSHSZRnS._AC_UY327_FMwebp_QL65_.jpg',
-  author: 'Joseph Murphy',
-  title: 'The Power of Your Subconcious Mind'
-},
-{
-  id:2,
-  img:'https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/71g2ednj0JL._AC_UY327_FMwebp_QL65_.jpg',
-  author: 'Morgan Housel',
-  title: 'The Psychology of Money'
-}
-]
+// import statements
+import {books} from './books'
+import Book from './Book'
+import {greeting} from './testing/testing'
 // const author = 'Joseph Murphy'
 // const title = 'The Power of Your Subconcious Mind'
 // const img = "https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/71UwSHSZRnS._AC_UY327_FMwebp_QL65_.jpg" 
@@ -56,6 +45,7 @@ function Greeting(){
 //Nested components
 
 function BookList(){
+  console.log(greeting);
   return (
     <section className="booklist">
       {/* <Book 
@@ -78,24 +68,7 @@ function BookList(){
     </section>
   );
 }
-// if we use spread operator then, we can use below syntax also
-const Book =({img,title,author})=>{
-// const Book = (props)=> {
-  // console.log(props);
-  // (Destructuting object, can also be done in passing props obj. in parameters)
-  // const { img, title, author } = props;
-  return <article className="book">
-      <img src={img} alt="book image"></img>
-      <h1>{title}</h1>
-      <h4>{author}</h4>
-      {/* {props.children} */}
-      {/* {console.log(props)} */}
-      {/* <p>{props.job}</p>
-      <p>{props.title}</p>
-      <p>{props.number}</p> */}
-      {/* <p>{6+6}</p> */}
-      </article>
-}
+
 // const Image = ()=> {
 //   return <img src="https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/71UwSHSZRnS._AC_UY327_FMwebp_QL65_.jpg" alt="book image"></img>
 // }
